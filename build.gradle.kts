@@ -3,7 +3,6 @@ plugins {
     kotlin("jvm") version "2.0.21"
     id("com.gradle.plugin-publish") version "1.3.0"
     `kotlin-dsl`
-    id("com.github.node-gradle.node").version("7.1.0")
 }
 
 group = "com.kiiadi"
@@ -22,13 +21,6 @@ gradlePlugin {
         }
     }
 }
-
-publishing {
-    repositories {
-        mavenLocal()
-    }
-}
-
 
 dependencies {
     implementation("com.github.node-gradle:gradle-node-plugin:7.1.0")

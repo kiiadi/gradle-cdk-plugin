@@ -15,7 +15,7 @@ node {
 }
 
 cdk {
-    mainClass.set("CdkTestAppKt")
+    mainClass = "CdkTestAppKt"
 }
 
 dependencies {
