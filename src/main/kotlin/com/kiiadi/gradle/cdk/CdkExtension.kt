@@ -17,6 +17,12 @@ open class CdkExtension(project: Project) {
      */
     val cdkVersion: Property<String> = project.objects.property<String>().convention(DEFAULT_CDK_CLI_VERSION)
 
+    /**
+     * Require approval for sensitive changes on deployment
+     * Possible values: never, any-change, and broadening
+     */
+    val requireApproval: Property<String> = project.objects.property<String>().convention("never")
+
     companion object {
         private const val DEFAULT_CDK_CLI_VERSION = "2.174.0"
         const val NAME = "cdk"
