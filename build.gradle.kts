@@ -7,7 +7,6 @@ plugins {
 }
 
 group = "com.kiiadi"
-version = "0.1"
 
 repositories {
     mavenCentral()
