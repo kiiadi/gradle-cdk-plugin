@@ -20,6 +20,7 @@ class CdkPlugin: Plugin<Project> {
         val cdkExtension = project.extensions.getByType<CdkExtension>()
 
         val cdkCli = cdkExtension.cdkVersion.map { "aws-cdk@$it" }
+        val requireApproval = cdkExtension.requireApproval
         project.plugins.apply(NodePlugin::class.java)
 
         project.plugins.apply(ApplicationPlugin::class.java)
@@ -49,7 +50,7 @@ class CdkPlugin: Plugin<Project> {
 
             command.set(cdkCli)
 
-            args.set(listOf("deploy", "--app", "cdk.out", "--all"))
+            args.set(listOf("deploy", "--app", "cdk.out", "--require-approval", requireApproval.get(), "--all"))
 
             dependsOn(cdkSynth)
         }
