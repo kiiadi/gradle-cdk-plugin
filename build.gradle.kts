@@ -15,8 +15,9 @@ repositories {
 
 release {
     failOnPublishNeeded = false
-    buildTasks = listOf("publishPlugins")
 }
+
+tasks.afterReleaseBuild.get().dependsOn(tasks.publishPlugins)
 
 gradlePlugin {
     vcsUrl = "https://github.com/kiiadi/gradle-cdk-plugin"
