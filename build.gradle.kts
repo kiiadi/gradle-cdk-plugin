@@ -13,14 +13,11 @@ repositories {
     gradlePluginPortal()
 }
 
-release {
-    failOnPublishNeeded = false
-}
-
-tasks.afterReleaseBuild.get().dependsOn(tasks.publishPlugins)
+tasks.afterReleaseBuild.map { it.dependsOn(tasks.publishPlugins) }
 
 gradlePlugin {
     vcsUrl = "https://github.com/kiiadi/gradle-cdk-plugin"
+    website = "https://github.com/kiiadi/gradle-cdk-plugin/blob/main/README.md"
     plugins {
         create("gradle-cdk-plugin") {
             id = "com.kiiadi.gradle-cdk-plugin"
