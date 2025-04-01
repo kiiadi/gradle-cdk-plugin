@@ -1,4 +1,3 @@
-
 plugins {
     kotlin("jvm") version "2.0.21"
     id("com.gradle.plugin-publish") version "1.3.0"
@@ -13,7 +12,7 @@ repositories {
     gradlePluginPortal()
 }
 
-tasks.afterReleaseBuild.map { it.dependsOn(tasks.publishPlugins) }
+tasks.afterReleaseBuild.get().dependsOn(tasks.publishPlugins)
 
 gradlePlugin {
     vcsUrl = "https://github.com/kiiadi/gradle-cdk-plugin"
