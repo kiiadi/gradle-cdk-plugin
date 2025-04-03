@@ -1,7 +1,6 @@
 package com.kiiadi.gradle.cdk
 
 import org.gradle.api.Project
-import org.gradle.api.initialization.resolve.RepositoriesMode
 import org.gradle.api.provider.Property
 import org.gradle.kotlin.dsl.property
 
